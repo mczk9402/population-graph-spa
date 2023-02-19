@@ -9,3 +9,11 @@ html {
 *:after {
   box-sizing: inherit;
 }
+
+input[type="checkbox"] {
+  margin: 0;
+}
+
+.hoge {
+  height: 100vh;
+}
