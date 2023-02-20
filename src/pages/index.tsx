@@ -3,7 +3,11 @@ import { PrefectureCheckbox } from "@/components/PrefectureCheckbox";
 import { AreaChart } from "@/components/AreaChart";
 import { API_ENDPOINT } from "@/configs/resas-api";
 import { getPrefectures } from "@/apis/resas-api";
+
+import { PrefectureCheckboxList } from "@/components/PrefectureCheckboxList";
+import { Section } from "@/components/Section";
 import { Layout } from "@/components/Layout";
+import { Header } from "@/components/Header";
 import { useState } from "react";
 import Head from "next/head";
 import useSWR from "swr";
@@ -28,17 +32,12 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Layout>
-        <h1>都道府県別 総人口推移グラフ</h1>
 
-        <section>
-          <h2>都道府県</h2>
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(6, 1fr)",
-            }}
-          >
+      <Header />
+
+      <Layout>
+        <Section heading="都道府県">
+          <PrefectureCheckboxList>
             {prefectures?.map((prefecture) => (
               <PrefectureCheckbox
                 prefecture={prefecture}
@@ -47,13 +46,12 @@ export default function Home() {
                 key={prefecture.prefCode}
               />
             ))}
-          </div>
-        </section>
+          </PrefectureCheckboxList>
+        </Section>
 
-        <section>
-          <h2>人口数</h2>
+        <Section heading="人口数">
           <AreaChart data={prefecturePopulationData} categories={categories} />
-        </section>
+        </Section>
       </Layout>
     </>
   );

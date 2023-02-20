@@ -1,0 +1,13 @@
+.section {
+  display: grid;
+  gap: 16px;
+
+  & + & {
+    margin-top: 64px;
+  }
+}
+
+.heading {
+  font-weight: bold;
+  font-size: 22px;
+}
