@@ -59,7 +59,7 @@ export const PrefectureCheckbox: FC<Props> = ({
 
   return (
     <label className={styles.label}>
-      <input className={styles.input} onChange={handleClick} type="checkbox" />
+      <input onChange={handleClick} type="checkbox" />
       <span className={styles.title}>{prefectureName}</span>
     </label>
   );

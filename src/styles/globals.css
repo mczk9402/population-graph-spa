@@ -2,6 +2,7 @@
 
 html {
   box-sizing: border-box;
+  color: #495057;
 }
 
 *,
@@ -10,10 +11,14 @@ html {
   box-sizing: inherit;
 }
 
+body {
+  background-color: #f1f3f5;
+}
+
 input[type="checkbox"] {
   margin: 0;
 }
 
-.hoge {
-  height: 100vh;
+.recharts-legend-wrapper div {
+  justify-content: flex-start;
 }

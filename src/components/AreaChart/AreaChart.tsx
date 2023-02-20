@@ -1,5 +1,4 @@
 import { AreaChart as TremorAreaChart } from "@tremor/react";
-
 import React, { FC } from "react";
 
 type Props = {
